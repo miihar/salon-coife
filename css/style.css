@@ -22,7 +22,11 @@ ul {
 .logogo {
     width: 13%;
 }
-
+.flexUnPeu {display: flex;}
+.boites {
+    width: 70%;
+    text-align: justify;
+}
 h1 {font-size: 309%; color: white;}
 .welcomePart h2{font-size: 300; color: white;}
 h2 {font-size: 400%;}

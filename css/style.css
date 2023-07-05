@@ -17,7 +17,12 @@ ul {
 /* welcome part */
 .welcomePart{
     background: url("../images/fond_home_page&.jpg");
-    padding: 3%;
+}
+
+.welCome{
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-left: 10%;
 }
 .logogo {
     width: 13%;
@@ -25,12 +30,36 @@ ul {
 .flexUnPeu {display: flex;}
 .boites {
     width: 70%;
-    text-align: justify;
+    text-align: left;
+    margin: 10%;
 }
 h1 {font-size: 309%; color: white;}
 .welcomePart h2{font-size: 300; color: white;}
 h2 {font-size: 400%;}
 .titreMoyen{}
+
+/* partie Our Service */
+.ourServicePart{
+    text-align: center;
+}
+.topCard{
+    display: flex;
+    gap: 3%;
+    justify-content: space-evenly;
+}
+.carteOne{
+    background: url(../images/services/massage12.jpg);
+}
+.carteTwo{
+    background: url(../images/services/massage32.jpg);
+}
+.carteThree{
+    background: url(../images/services/massage33.jpg);
+}
+.Card{
+    background-size: cover;
+    width: 20%;
+}
 
 /* footer */
 .footerPTOne{}

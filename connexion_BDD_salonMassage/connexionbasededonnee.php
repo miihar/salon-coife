@@ -67,13 +67,24 @@ class MaConnexion{
     }
 
     // fonction, de mis a jours des elements de la bdd
-    public function miseAJour_Secure($id,$table,$column, $newValue){
+    public function miseAJour_Secure($newtitre,$newdescription,$newdate, $newcontenu, $newimage,$newresume,$newtitre_2,$newcontenu_2,$newtitre_3,$newcontenu_3){
         try {
-            $requete = "UPDATE $table set $column= ? WHERE ID_Article = ?";
+
+            $requete = "UPDATE article SET Titre = ?, Description = ?, Date_de_publication = ?, Contenu = ?, Image = ?, Resume = ?, Titre_2 = ?, Contenu_2 = ?,Titre_3 = ?,Contenu_3 = ? 
+                WHERE ID_Article = ?";
             $requete_preparee = $this->connexionPDO->prepare($requete);
 
-            $requete_preparee->bindVAlue(1, $newValue, PDO::PARAM_STR);
-            $requete_preparee->bindVAlue(2, $id, PDO::PARAM_INT);
+            $requete_preparee->bindValue(1, $newtitre,PDO::PARAM_STR);
+            $requete_preparee->bindValue(2, $newdescription,PDO::PARAM_STR);
+            $requete_preparee->bindValue(3, $newdate,PDO::PARAM_STR);
+            $requete_preparee->bindValue(4, $newcontenu,PDO::PARAM_INT);
+            $requete_preparee->bindValue(5, $newimage,PDO::PARAM_STR);
+            $requete_preparee->bindValue(6, $newresume,PDO::PARAM_STR);
+            $requete_preparee->bindValue(7, $newtitre_2,PDO::PARAM_STR);
+            $requete_preparee->bindValue(8, $newcontenu_2,PDO::PARAM_STR);
+            $requete_preparee->bindValue(9, $newcontenu_3,PDO::PARAM_STR);
+            $requete_preparee->bindValue(10, $newtitre_3,PDO::PARAM_STR);
+
 
             $requete_preparee->execute();
             echo("mise a jour reussi");
@@ -86,8 +97,14 @@ class MaConnexion{
     }
 }
 
+
+
+
+
 // $test = new MaConnexion("salonmassage","","root","localhost");
 // $resultat=
 // $test->insertionSecure("dsads","dazdza","2001/03/03","ezd&s","refqfs","dzadzad","dsads","dsadsa","dsa","dasda");
 // var_dump($resultat);
+
+// 
 ?>

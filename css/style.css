@@ -49,16 +49,47 @@ h2 {font-size: 400%;}
 }
 .carteOne{
     background: url(../images/services/massage12.jpg);
+    display: grid;
+    align-items: flex-end;
 }
 .carteTwo{
     background: url(../images/services/massage32.jpg);
+    display: grid;
+    align-items: flex-end;
 }
 .carteThree{
     background: url(../images/services/massage33.jpg);
+    display: grid;
+    align-items: flex-end;
 }
 .Card{
     background-size: cover;
     width: 20%;
+    padding: 3%;
+}
+.titreCarte{
+    position: absolute;
+}
+.paraGraphe{
+    color: transparent;
+}
+
+.Card:hover .titreCarte{
+    transform: translateY(-100px);
+    transition: 1s;
+}
+.Card:hover .paraGraphe{
+    color: black;
+}
+
+/* why to choose our salon */
+.wtcu {
+    gap: 3%;
+    align-items: center;
+    justify-content: space-around;
+}
+.flexUnPeu .titreMoyen{
+    /* margin-left: 10%; */
 }
 
 /* footer */

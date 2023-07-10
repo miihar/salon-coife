@@ -39,7 +39,7 @@ class MaConnexion{
 
     //-----------------------------------------------------------------------
 
-    //fonction pour introduire une donnee dans la table produit
+    //fonction pour introduire une donnee dans la table article
     public function insertionSecure($titre,$description,$date, $contenu, $image,$resume,$titre_2,$contenu_2,$titre_3,$contenu_3){
         try {
             $requete = " INSERT INTO article(Titre, Description, Date_de_publication, Contenu, Image, Resume, Titre_2, Contenu_2,Titre_3,Contenu_3) 
@@ -93,6 +93,21 @@ class MaConnexion{
 
         } catch(PDOException $e) {
             return $e->getMessage();
+        }
+    }
+
+    public function deleteArticle($valeur){
+        try{
+            $requete = "DELETE FROM article WHERE ID_Article = $valeur";
+            $requete_prepare = $this->connexionPDO->prepare($requete);
+
+            $requete_prepare->execute();
+            echo 'modification reussie';
+            return $requete_prepare;
+            
+
+        } catch (PDOException $e) {
+            echo 'Erreur : ' . $e->getMessage();
         }
     }
 }
